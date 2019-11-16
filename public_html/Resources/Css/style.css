@@ -11,3 +11,7 @@ body {
 .page-footer {
     flex-shrink: 0;
 }
+
+div[id$='-status'] {
+    word-break: break-word;
+}

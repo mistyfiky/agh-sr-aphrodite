@@ -67,5 +67,5 @@ $(document).ready(function () {
                         .html("Couldn't connect to zeus");
                 }
             });
-        }, 2000);
+        }, 1000);
 });
