@@ -76,7 +76,6 @@ $(document).ready(function () {
             'type': $("#search_form_type").val()
         };
 
-        console.log(data);
         $.ajax({
             type: "POST",
             url: "http://localhost:8084/?function=searchByTitle",
