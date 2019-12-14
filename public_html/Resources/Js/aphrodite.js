@@ -38,7 +38,7 @@ $(document).ready(function () {
                     hadesStatus
                         .removeClass()
                         .addClass("card-panel green lighten-2")
-                        .html("Successfully authentication from hades, token: " + response.data.token);
+                        .html("Successful authentication from hades, token: " + response.data.token);
                 },
                 error: function () {
                     hadesStatus
