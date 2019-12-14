@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $('select').formSelect();
     var apolloStatus = $("#apollo-status");
     var zeusStatus = $("#zeus-status");
     var hadesStatus = $("#hades-status");
@@ -68,4 +69,23 @@ $(document).ready(function () {
                 }
             });
         }, 1000);
+
+    $("#search_form input[type='submit']").click(function () {
+        data = {
+            'title': $("#search_form_title").val(),
+            'type': $("#search_form_type").val()
+        };
+
+        console.log(data);
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8084/?function=searchByTitle",
+            data: data,
+            success: function (result) {
+                $("#search_form_result").html(result);
+            }
+        });
+
+        return false;
+    });
 });

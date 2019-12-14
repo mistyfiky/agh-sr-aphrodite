@@ -28,6 +28,33 @@
         <div id="apollo-status" class="card-panel red darken-3">Apollo is down</div>
         <div id="hades-status" class="card-panel red darken-3">Hades is down</div>
     </div>
+    <div class="container movie-container">
+        <form method="post" action="" id="search_form">
+            <div class="input-field col s12">
+                <input id="search_form_title" type="text" maxlength="50">
+                <label for="search_form_title">Title</label>
+
+            </div>
+            <div class="input-field col s12">
+                <select id="search_form_type">
+                    <option value="movie">Movie</option>
+                    <option value="series">Series</option>
+                    <option value="episode">Episode</option>
+                </select>
+                <label>Select type</label>
+            </div>
+            <div class="input-field col s12">
+                <input type="submit" class="btn waves-effect waves-light" value="Search">
+            </div>
+        </form>
+        <div id="search_form_result">
+
+        </div>
+
+
+            </div>
+        </div>
+    </div>
 </div>
 
 <footer class="page-footer">
