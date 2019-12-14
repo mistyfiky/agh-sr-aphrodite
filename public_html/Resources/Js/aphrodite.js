@@ -33,12 +33,12 @@ $(document).ready(function () {
                 dataType: "json",
                 contentType: "application/json",
                 processData: false,
-                data: "{}",
+                data: '{"username": "user","password": "pass"}',
                 success: function (response) {
                     hadesStatus
                         .removeClass()
                         .addClass("card-panel green lighten-2")
-                        .html("Successfully connected to hades, message: " + response.meta.message);
+                        .html("Successfully authentication from hades, token: " + response.data.token);
                 },
                 error: function () {
                     hadesStatus
