@@ -1,13 +1,16 @@
 html, body {
     height: 100%;
 }
+
 body {
     display: flex;
     flex-direction: column;
 }
+
 .page-wrap {
     flex: 1 0 auto;
 }
+
 .page-footer {
     flex-shrink: 0;
 }
@@ -18,4 +21,22 @@ div[id$='-status'] {
 
 .movie-container {
     margin-top: 50px;
+}
+
+.movie-container .card {
+    height: 100%;
+}
+
+.movie-container .card-title {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.movie-container .card-image {
+    min-height: 400px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
 }
