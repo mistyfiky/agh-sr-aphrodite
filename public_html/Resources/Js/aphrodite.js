@@ -105,12 +105,12 @@ $(document).ready(function () {
 
     $("#genre_form input[type='submit']").click(function () {
         data = {
-            'genre': $("#genre_form_select").val()
+            'genres': [$("#genre_form_select").val()]
         };
 
         $.ajax({
             type: "POST",
-            url: "http://localhost:8084/?function=searchByGenre",
+            url: "http://localhost:8084/?function=searchByGenres",
             data: data,
             success: function (result) {
                 $("#search_form_result").html(result);
