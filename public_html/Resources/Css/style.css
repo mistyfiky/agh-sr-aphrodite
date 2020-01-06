@@ -32,11 +32,19 @@ div[id$='-status'] {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+.movie-container form {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
 .movie-container .card-image {
-    min-height: 400px;
+}
+
+.input-field.col label {
+    left: 0;
 }
 
 .flex {
     display: flex;
     flex-wrap: wrap;
 }
+

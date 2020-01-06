@@ -70,6 +70,21 @@ $(document).ready(function () {
             });
         }, 1000);
 
+    $.ajax({
+        url: "http://localhost:8084?function=getAvailableGenres",
+        type: "POST",
+        dataType: "html",
+        contentType: "application/json",
+        processData: false,
+        data: "{}",
+        success: function (response) {
+            $("#genre_form_select").html(response).formSelect();
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
+
     $("#search_form input[type='submit']").click(function () {
         data = {
             'title': $("#search_form_title").val(),
@@ -79,6 +94,23 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "http://localhost:8084/?function=searchByTitle",
+            data: data,
+            success: function (result) {
+                $("#search_form_result").html(result);
+            }
+        });
+
+        return false;
+    });
+
+    $("#genre_form input[type='submit']").click(function () {
+        data = {
+            'genre': $("#genre_form_select").val()
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8084/?function=searchByGenre",
             data: data,
             success: function (result) {
                 $("#search_form_result").html(result);
