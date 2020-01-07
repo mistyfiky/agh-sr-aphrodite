@@ -1,10 +1,8 @@
 $(document).ready(function () {
     $('select').formSelect();
     var apolloStatus = $("#apollo-status");
-    var zeusStatus = $("#zeus-status");
     var hadesStatus = $("#hades-status");
     apolloStatus.removeClass().addClass("card-panel yellow lighten-2").html("Connecting to apollo.");
-    zeusStatus.removeClass().addClass("card-panel yellow lighten-2").html("Connecting to zeus.");
     hadesStatus.removeClass().addClass("card-panel yellow lighten-2").html("Connecting to hades.");
     setTimeout(
         function () {
@@ -46,26 +44,6 @@ $(document).ready(function () {
                         .removeClass()
                         .addClass("card-panel red darken-3")
                         .html("Couldn't connect to hades");
-                }
-            });
-            $.ajax({
-                url: "http://localhost:8082",
-                type: "POST",
-                dataType: "json",
-                contentType: "application/json",
-                processData: false,
-                data: "{}",
-                success: function (response) {
-                    zeusStatus
-                        .removeClass()
-                        .addClass("card-panel green lighten-2")
-                        .html("Successfully connected to zeus, message: " + response.meta.message);
-                },
-                error: function () {
-                    zeusStatus
-                        .removeClass()
-                        .addClass("card-panel red darken-3")
-                        .html("Couldn't connect to zeus");
                 }
             });
         }, 1000);
