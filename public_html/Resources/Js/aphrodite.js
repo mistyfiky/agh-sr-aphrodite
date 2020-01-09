@@ -41,6 +41,19 @@ $(document).ready(function () {
 
     $("#show_recommendations").click(showRecommendationsHandler);
 
+    $("#trigger_error").click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: "http://localhost:8084?function=triggerError",
+            type: "POST",
+            data: "",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (result) {
+            },
+        });
+    })
+
 });
 
 function enableAddMovieButtons() {
