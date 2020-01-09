@@ -77,6 +77,11 @@ function updateUserData() {
             'Authorization': `Bearer ` + getUserToken(),
         },
         success: function (result) {
+            if (result.data.movies.length === 0) {
+                disableMoviePreloader();
+                $("#search_form_result").html("Musisz wybrac najpierw chociaż jeden ulubiony film, żeby zobaczyc listę obejrzanych filmow :)");
+                return;
+            }
             data = {
                 'moviesIds': result.data.movies
             };
@@ -233,6 +238,11 @@ function showRecommendationsHandler() {
             'Authorization': `Bearer ` + getUserToken(),
         },
         success: function (result) {
+            if (result.data.movies.length === 0) {
+                disableMoviePreloader();
+                $("#search_form_result").html("Musisz wybrac najpierw chociaż jeden ulubiony film, żebyśmy mogli coś polecic :)");
+                return;
+            }
             data = {
                 'moviesIds': result.data.movies
             };
