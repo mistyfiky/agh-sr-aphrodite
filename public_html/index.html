@@ -17,7 +17,8 @@
 
 <body>
 <div class="page-wrap">
-
+    <div id="user_token" class="d-none"></div>
+    <div id="user_name" class="d-none"></div>
     <div class="container">
         <h2 class="center-align">
             Afrodyta
@@ -27,31 +28,49 @@
         <div id="apollo-status" class="card-panel red darken-3">Apollo is down</div>
         <div id="hades-status" class="card-panel red darken-3">Hades is down</div>
     </div>
-    <div class="container movie-container">
-        <form method="post" action="" id="search_form">
-            <div class="input-field col s12">
-                <input id="search_form_title" type="text" maxlength="50">
-                <label for="search_form_title">Title</label>
+    <div class="container progress" id="movie-container-preloader">
+        <div class="indeterminate"></div>
+    </div>
+    <div class="container movie-container d-none hidden" id="movie-container">
+        <div class="row valign-wrapper center-align">
+            <div class="col s12 m4">
+                <form method="post" action="" id="search_form">
+                    <div class="input-field col s12">
+                        <input id="search_form_title" type="text" maxlength="50">
+                        <label for="search_form_title">Title</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="submit" class="btn waves-effect waves-light" value="Search">
+                    </div>
+                </form>
             </div>
-            <div class="input-field col s12">
-                <input type="submit" class="btn waves-effect waves-light" value="Search">
+            <div class="col s12 m4">
+                <form method="post" action="" id="genre_form">
+                    <div class="input-field col s12">
+                        <select id="genre_form_select">
+                        </select>
+                        <label for="genre_form_select">Select type</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="submit" class="btn waves-effect waves-light" value="Search">
+                    </div>
+                </form>
             </div>
-        </form>
-        <form method="post" action="" id="genre_form">
-            <div class="input-field col s12">
-                <select id="genre_form_select">
-                </select>
-                <label for="genre_form_select">Select type</label>
+            <div class="col s12 m4">
+                <button class="btn waves-effect waves-light" id="show_watched">Pokaż obejrzane</button>
+                <button class="btn waves-effect waves-light" id="show_recommendations">Pokaż polecane</button>
             </div>
-            <div class="input-field col s12">
-                <input type="submit" class="btn waves-effect waves-light" value="Search">
-            </div>
-        </form>
+        </div>
+        <div class="container progress d-none" id="movie-preloader">
+            <div class="indeterminate"></div>
+        </div>
         <div id="search_form_result">
 
         </div>
+        <div id="already_watched"></div>
 
     </div>
+
 </div>
 
 <footer class="page-footer">
